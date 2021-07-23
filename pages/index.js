@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import { connectToDatabase } from '../lib/mongodb'
 
-export default function Home({ isConnected }) {
+
+export default function Home() {
   return (
     <div className="container">
-      
+       <h1>Hello</h1>
     </div>
   )
 }
