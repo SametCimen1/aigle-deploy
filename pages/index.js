@@ -1,20 +1,10 @@
-import Head from 'next/head'
-import { connectToDatabase } from '../lib/mongodb'
 
-export default function Home({ isConnected }) {
+
+export default function Home() {
   return (
     <div className="container">
-      
+       <h1>Hello last update</h1>
     </div>
   )
 }
 
-export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase()
-
-  const isConnected = await client.isConnected()
-
-  return {
-    props: { isConnected },
-  }
-}
