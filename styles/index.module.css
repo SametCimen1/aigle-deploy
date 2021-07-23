@@ -1,0 +1,124 @@
+
+.h1,.h3{
+    padding:20px;
+}
+
+.h3{
+    font-family: 'Montserrat', sans-serif;
+}
+.main{
+    width: 90%;
+    margin: 0 auto;
+}
+.card{
+    padding:20px 0;
+    margin: 3rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.imageCard{
+    width: 100%;
+}
+.textCard{
+    width: 100%;
+    text-align: center;
+}
+.secondText{
+    width: 100%;
+    text-align: center;
+}
+.secondImage{
+    width: 100%;
+    text-align: center;
+}
+
+
+.buttonCard{
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;   
+}
+.newAccount{
+    cursor: pointer;
+    background-color: #63cc86bb;
+    border: 0 ;
+    border-radius: 20px;
+    padding:10px;
+    width: 40%;
+}
+.login{
+    cursor: pointer;
+    background-color: transparent;
+    border:1px solid #63cc86bb;
+    border-radius: 20px;
+    width: 40%;
+    padding:10px;
+
+}
+
+.newAccount:hover{
+
+    background-color: transparent;
+    border:1px solid #63cc86bb;
+}
+.login:hover{
+    background-color: #63cc86bb;
+    border:0;
+
+
+}
+
+@media screen and (min-width:865px){
+    .card{
+      flex-direction: row; 
+    }
+    .imageCard{
+        width: 60%;
+    }
+    .textCard{
+        font-size:1.5rem;
+        width: 40%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .secondText{
+        font-size:1.5rem;
+        width: 60%;
+        max-width: 896px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .secondImage{
+        width: 40%;
+    }
+    .buttonCard{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .newAccount{
+        width: 40%;
+        max-width: 400px;
+    }
+    .login{
+        width: 40%;
+        max-width: 400px;
+    }
+}
+@media screen and (min-width:1700px) {
+    .login{
+        font-size:1.5rem;
+    }
+    .newAccount{
+        font-size:1.5rem;
+    }
+}

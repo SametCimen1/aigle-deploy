@@ -1,0 +1,61 @@
+.imgContainer{
+    position:absolute;
+    width: 100vw;
+    height: 80vh;
+    margin: 0;
+    z-index: -1;
+}
+.formContainer{
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.form{
+   
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 15%;
+    min-width: 200px;
+    justify-content: space-between;
+
+}
+
+
+
+.input{
+    border:0;
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+    height: 4vh;
+}
+.sign{
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: #63cc86bb;
+    border: 0 ;
+    border-radius: 20px;
+    padding:10px;
+    width: 50%;
+}
+
+.sign:hover{
+    background-color: #63cc86bb;
+}
+
+
+.labelContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.chooseContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
