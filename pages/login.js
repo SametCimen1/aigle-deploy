@@ -15,13 +15,19 @@ export default function handler(){
         e.preventDefault();
         try{
          const data = await fetch(`/api/users/login?displayName=${displayName}&password=${password}`);
+         if(data.ok === false || data.status === 401){
+          alert("password or displayName doesnt match")
+        }
+         else{
          const response =  await data.json();
-         setCookie("user", response, {
+            setCookie("user", response, {
             path: "/",
             maxAge: 43200, // Expires after 1hr
             sameSite: true,
           })
           router.push('/')
+         }
+    
         }
         catch(error){
           alert("something went wrong check console");
