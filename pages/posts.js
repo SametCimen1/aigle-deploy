@@ -3,12 +3,25 @@ import { useSelector } from 'react-redux';
 import {useEffect, useState} from 'react'
 import style from '../styles/post.module.css'
 import defaultProfile from '../public/profile.png'
-export default function Posts(){
+import {useRouter} from 'next/router'
+
+export default function Posts({comingFrom}){
+    const router = useRouter();
+
+  
+    useEffect(()=>{
+        if(comingFrom === null){
+            router.push('/')
+        }
+    })
+
     const[user, setUser] = useState();
     const store = useSelector(state => state)
     const[posts, setPosts] = useState([]);
     const [newPostText, setNewPostText]  = useState('')
     const [newPostImage, setNewPostImage]  = useState('')
+    
+
 
     const getFriendPosts = async (friendName)=>{
         const response = await fetch(`api/users/posts?displayName=${friendName}`)
@@ -87,4 +100,22 @@ export default function Posts(){
    
        </div>
     )   
+}
+
+
+export async function getServerSideProps(context){
+    if(typeof context.query.comingFrom  === 'undefined'){
+        return {
+            props: { 
+               comingFrom:null //pass it to the page props
+            }
+        } 
+    }
+    else{
+    return {
+        props: { 
+           comingFrom: context.query.comingFrom //pass it to the page props
+        }
+    }
+}   
 }

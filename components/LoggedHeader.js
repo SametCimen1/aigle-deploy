@@ -35,7 +35,12 @@ const [cookies, setCookie] = useCookies(["user"]);
         <Image src = {logo} alt = "Logo, A picture of eagle" width="100px" height ="100px"/>
     <ul className = {style.ul}>
         <li className = {style.li} >
-            <Link href = "/posts">
+        <Link href={{
+        pathname: "/posts",
+        query: {
+            comingFrom: 'yes'
+        }
+    }}>
             <button ref={btn1} onClick={()=> change(btn1)} className = {style.btn}>Posts</button>
             </Link>
         </li>

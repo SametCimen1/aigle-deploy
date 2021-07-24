@@ -108,7 +108,7 @@ export default function Home({data}) {
            <Image src = {image3} alt = "social media app picture number 1" layout="intrinsic"/>
           </div>
          <div className = {style.buttonCard}>
-            <Link href = "/signup"><button className = {style.newAccount}>Make a new Account</button></Link>
+            <Link href = "/signup" ><button className = {style.newAccount}>Make a new Account</button></Link>
           <Link href = "/login"><button className = {style.login}>Login</button></Link>
           </div>
         </div>

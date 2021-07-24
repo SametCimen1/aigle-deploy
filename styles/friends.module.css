@@ -1,0 +1,42 @@
+.profilPic{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.friendImageContainer{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.friendContainer{
+    width: 95%;
+    display: flex;
+    margin: 1rem auto;
+    justify-content: space-around;
+}
+.friendNameContainer{
+ width: 60%;
+ text-align: center;
+
+
+}
+.lastPost{
+    display: none;
+}
+
+@media screen and (min-width:600px) {
+    .friendImageContainer{
+        width: 20%;
+    }
+    .lastPost{
+        display: block;
+        width: 30%;
+        text-align: center;
+    }
+    
+    .friendNameContainer{
+        width: 40%;
+        text-align: center;
+       
+       }
+}
