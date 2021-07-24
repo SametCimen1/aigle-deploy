@@ -1,4 +1,5 @@
 .ppContainer{
+    margin: 1rem 0;
     text-align: center;
 }
 
@@ -7,4 +8,64 @@
     width: 100px;
     height: 100px;
     border-radius: 20%;
+}
+
+.textContainer{
+    margin: 1rem auto;
+    text-align: center;   
+}
+.btnContainer{
+    text-align: center;
+}
+.btn{
+    padding:10px 20px;
+    background-color: rgb(71, 255, 47);
+    border: 0;
+    width: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(208, 255, 0); 
+}
+
+.post{
+    width: 90%;
+    margin: 1rem auto;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+}
+.postImage{
+    width: 100%;
+    max-width: 800px;
+   
+}
+
+.postText{
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.btnUnfollow{
+    padding:10px 20px;
+    background-color: rgba(255, 47, 47, 0.561);
+    border: 0;
+    width: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnUnfollow:hover{
+    background-color: rgba(255, 47, 47, 1);
+}
+
+@media screen  and (min-width:700px){
+    .profilePic{
+
+        width: 200px;
+        height: 200px;
+    }
+    .textContainer{
+       font-size: 1.5rem;
+    }
 }

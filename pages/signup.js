@@ -22,7 +22,7 @@ export default function signup(){
           return;
         }
         else{
-         const data = await fetch(`/api/users/newUser?fullName=${fullName}&displayName=${displayName.toLowerCase}&password=${password}&img=${img}`)
+         const data = await fetch(`/api/users/newUser?fullName=${fullName}&displayName=${displayName}&password=${password}&img=${img}`)
          
           if(data.ok){
             router.push("/login")

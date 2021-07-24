@@ -5,6 +5,7 @@
     min-height:100px;  
     display: flex;
 
+
 }
 .profilPic{
     width: 50px;
@@ -40,4 +41,15 @@
 
 .submit:hover{
     background-color: #15f35fbb;
+}
+.postImage{
+    width: 50%;
+ 
+}
+
+.post{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
