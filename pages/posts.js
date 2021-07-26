@@ -63,9 +63,9 @@ export default function Posts({comingFrom}){
                 if(user.friends.length <= 0){
                     console.log("NO FRIENDS")
                 } 
-            user.friends.map((friendName)=>{
+            user.friends.forEach((friendName)=>{
                console.log("YES FRIENDS")
-                getFriendPosts(friendName)
+                 getFriendPosts(friendName)
             })
            
            
@@ -90,7 +90,15 @@ export default function Posts({comingFrom}){
         };
         return img.src = imageSrc;
     }
- 
+
+
+    const fetchAgain = () =>{
+        setPosts([])
+        user.friends.map((friendName)=>{
+            console.log("Called FetchAgain")
+              getFriendPosts(friendName)
+         })
+    }
     return(
         <div>
         <h2>Post something!</h2>
@@ -103,6 +111,9 @@ export default function Posts({comingFrom}){
             </div>
             <button className = {style.submit}>Post</button>
         </form>
+        <button className = {style.refresh} onClick = {fetchAgain}>
+            Refresh
+        </button>
         {posts.length > 0 ?  posts.map(post =>
         {   
             console.log("IN RENDER")

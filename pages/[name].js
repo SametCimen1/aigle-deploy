@@ -67,8 +67,8 @@ export default function user({name}){
              {user.posts.map(post => {
                  return (
                         <div className = {style.post} key = {post.text + "div"}>
+                           <h2 key = {post.text + "text"} className = {style.postText}> {post.text}</h2>
                             {post.img === '' && post.img === null ? '' : checkImage(post.img)  === false ? '' : <img src = {post.img} className = {style.postImage}></img>}
-                            <h2 key = {post.text + "text"} className = {style.postText}> {post.text}</h2>
                         </div>
                  )
              })}

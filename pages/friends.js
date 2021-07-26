@@ -54,7 +54,7 @@ export default function friends(){
                  return(
                     <div className = {style.friendContainer}>  
                     <div className = {style.friendImageContainer}>
-                      {friend.img !== '' ? <Link href = {url}><img className = {style.profilPic}src = {friend.img}/></Link> : <img className = {style.profilPic} src = "https://www.pngarea.com/pngm/90/6980003_profile-icon-png-facebook-default-profile-picture-girl.png"/>}
+                      {friend.img !== '' ? <Link href = {url}><img className = {style.profilPic}src = {friend.img}/></Link> :<Link href = {url}><img className = {style.profilPic} src = "https://www.pngarea.com/pngm/90/6980003_profile-icon-png-facebook-default-profile-picture-girl.png"/></Link>}
                     </div>
                      <div className = {style.friendNameContainer}>
                          <h2>{friend.displayName}</h2>

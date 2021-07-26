@@ -32,9 +32,11 @@
 .post{
     width: 90%;
     margin: 1rem auto;
-     display: flex;
-     align-items: center;
-     flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(240, 240, 240, 0.767);
+    border-radius: 20px;
 }
 .postImage{
     width: 100%;
@@ -58,6 +60,7 @@
 .btnUnfollow:hover{
     background-color: rgba(255, 47, 47, 1);
 }
+
 
 @media screen  and (min-width:700px){
     .profilePic{
