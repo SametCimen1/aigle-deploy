@@ -23,21 +23,18 @@ export default function Posts({comingFrom}){
     
 
 
-    const getFriendPosts = async (friendName)=>{
-        const response = await fetch(`api/users/posts?displayName=${friendName}`)
-        console.log("FRIEND NAME")
-        console.log(friendName)
-        const res = await response.json();
-            console.log("RES")
-            console.log(res)
-            res.forEach(temp =>{
-                console.log("FOR EACH")
-                console.log(temp)
-                setPosts(prev => [...prev, temp])
+    const getFriendPosts = (friendName)=>{
+        console.log(">>>>>>>>>>>>>>>>>>>>>>>DSADAS")
+        console.log(friendName);
+            fetch(`api/users/posts?displayName=${friendName}`).then(res => {
+               return res.json(); 
+            }).then((res)=>{
+                res.forEach(temp =>{
+                    console.log("FOR EACH")
+                    console.log(temp)
+                    setPosts(prev => [...prev, temp]);
+                })
             })
-            
-            console.log("POSTS")
-            console.log(posts)
             // if(posts.length > 0){
             // posts.forEach(post => arr.push(post));
             // res.forEach(post => arr.push(post));    
@@ -52,8 +49,9 @@ export default function Posts({comingFrom}){
 
     useEffect(async()=>{
         if(Object.keys(store).length !== 0){
-            console.log(store)
-            setUser(store);
+            const data = await fetch(`api/users/${store.displayName}`)
+            const user = await data.json();
+            setUser(user)
            
             if(typeof user === 'undefined'){
                 console.log("user")
@@ -63,21 +61,19 @@ export default function Posts({comingFrom}){
                 if(user.friends.length <= 0){
                     console.log("NO FRIENDS")
                 } 
-            user.friends.forEach((friendName)=>{
-               console.log("YES FRIENDS")
-                 getFriendPosts(friendName)
-            })
-           
-           
+       
+            for(let i =0; i<user.friends.length; i++){
+                console.log("YES FRIENDS")
+                getFriendPosts(user.friends[i])
+            }
           }
         }
-    },[user])
+    },[])
    
   
     const newPost = async(e) => {
         e.preventDefault();
-
-        fetch(`/api/users/newPost?displayName=${user.displayName}&img=${newPostImage}&text=${newPostText}&pp=${user.img}`)
+        fetch(`/api/users/newPost?displayName=${user.displayName}&img=${newPostImage}&text=${newPostText}&pp=${user.img}&date=${Date.now()}`)
     }
 
     function checkImage(imageSrc) {
@@ -99,6 +95,9 @@ export default function Posts({comingFrom}){
               getFriendPosts(friendName)
          })
     }
+    useEffect(()=>{
+       posts.sort((firstItem, secondItem) => firstItem.date - secondItem.date);
+    },[posts])
     return(
         <div>
         <h2>Post something!</h2>

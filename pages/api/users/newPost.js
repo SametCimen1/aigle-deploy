@@ -11,7 +11,7 @@ export default async function handler(req,res){
      const postFromFunction = user.posts
      console.log(postFromFunction)
 
-     const post = {img:req.query.img, text:req.query.text, pp:user.img}
+     const post = {img:req.query.img, text:req.query.text, pp:user.img, date:req.query.date}
      
      const data = await db.collection("users").findOneAndUpdate(
         { "displayName" : req.query.displayName },

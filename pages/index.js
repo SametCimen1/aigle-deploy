@@ -9,9 +9,11 @@ import Image from 'next/image'
 import image1 from '../public/index1.jpg'
 import image2 from '../public/index2.jpg'
 import image3 from '../public/index3.jpg'
+import {useRouter} from 'next/router'
+
 
 export default function Home({data}) {
- 
+  const router = useRouter();
 
 
   let user = false;
@@ -119,7 +121,7 @@ export default function Home({data}) {
     </>
     : 
     <div>
-      <h1>Welcome {stateUser.displayName}</h1>
+      
     </div>
     }
     </div>
