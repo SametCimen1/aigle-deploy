@@ -1,0 +1,21 @@
+.postImage{
+    width: 50%;
+}
+
+.post{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.postContainer{
+    width: 100%;
+    background-color: rgba(199, 199, 199, 0.753);
+    margin: 1rem 0;
+    padding:10px;
+    display: flex;
+
+
+}

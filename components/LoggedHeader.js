@@ -46,13 +46,23 @@ const [cookies, setCookie] = useCookies(["user"]);
         </li>
 
         <li className = {style.li}>
-            <Link href = "/profile">
+        <Link href={{
+        pathname: "/profile",
+        query: {
+            comingFrom: 'yes'
+        }
+    }}>
             <button  ref={btn2} onClick={()=> change(btn2)}   className = {style.btn}>Profile</button>
             </Link>
         </li>
 
         <li className = {style.li}>
-            <Link href = "/friends">
+            <Link href={{
+        pathname: "/friends",
+        query: {
+            comingFrom: 'yes'
+        }
+    }}>
             <button   ref={btn3} onClick={()=> change(btn3)}   className = {style.btn}>Friends</button>
             </Link>
         </li>

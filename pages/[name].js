@@ -5,12 +5,28 @@ import {useCookies} from 'react-cookie'
 
 export default function user({name}){
      const[user,setUser] = useState();
-     const[op, setOp] = useState(false);
+     const[op, setOp] = useState();
+     
 
 
-     const[cookie, setCookie] = useState();
+     const[currentUser, setCurrentUser] = useState();
      const store = useSelector(state => state)
      
+     
+     useEffect(()=>{
+      let isFriend = false;
+      if(typeof currentUser !== 'undefined'){
+        currentUser.friends.forEach(friend =>{
+          if(friend === name){
+            isFriend = true;
+          }
+        })
+        setOp(isFriend)
+     }
+      setOp(isFriend)
+    },[currentUser])
+
+
      useEffect(async()=>{
       const data = await fetch(`api/users/${name}`);
       const res = await data.json();
@@ -21,13 +37,12 @@ export default function user({name}){
       console.log("store")  
       console.log(store)
       if(Object.keys(store).length !== 0){
-        console.log("store")  
-        console.log(store)
-          setCookie(store);       
+        const data = await fetch(`api/users/${store.displayName}`)
+        const user = await data.json();
+        setCurrentUser(user)    
 
         }
-      },[cookie])
-
+      },[])
 
      function checkImage(imageSrc) {
         var img = new Image();
@@ -42,13 +57,14 @@ export default function user({name}){
  
     const unFollow = async() =>{
       setOp(prev => !prev);
+      const data = await fetch(`api/users/friend/removeFriend?userName=${currentUser.displayName}&friendName=${user.displayName}`);
       
     
     }
-    const follow = () =>{
+    const follow = async() =>{
       setOp(prev => !prev);
-      // const data = await fetch(`api/users/friend/addFriend?userName=${}`)
-    }
+     const data = await fetch(`api/users/friend/addFriend?userName=${currentUser.displayName}&friendName=${user.displayName}`);
+      }
 
     return(
       <>

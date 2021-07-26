@@ -23,7 +23,42 @@
 .lastPost{
     display: none;
 }
+.addFriend{
+    padding:10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addFriend button {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding:5px 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
 
+
+.addFriend input {
+   border: 1px solid black;
+   border-radius: 5px;
+   margin-top: 1rem;
+   padding: 10px;
+
+}
+
+
+.addFriend button:hover {
+    background-color:  black;
+    color: white;
+}
+.noFriend{
+    text-align: center;
+    margin: 2rem;
+    font-weight: 200;
+}
 @media screen and (min-width:600px) {
     .friendImageContainer{
         width: 20%;
@@ -40,3 +75,4 @@
        
        }
 }
+

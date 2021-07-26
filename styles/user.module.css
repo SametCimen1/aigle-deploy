@@ -35,7 +35,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(240, 240, 240, 0.767);
     border-radius: 20px;
 }
 .postImage{
@@ -61,6 +60,20 @@
     background-color: rgba(255, 47, 47, 1);
 }
 
+.profilPic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.postContainer{
+    width: 100%;
+    background-color: rgba(199, 199, 199, 0.753);
+    margin: 1rem 0;
+    padding:10px;
+    display: flex;
+
+
+}
 
 @media screen  and (min-width:700px){
     .profilePic{

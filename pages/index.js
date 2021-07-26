@@ -121,7 +121,8 @@ export default function Home({data}) {
     </>
     : 
     <div>
-      
+      <h2 className = {style.welcome}>Welcome {stateUser.displayName}</h2>
+      <h2 className = {style.desc}>You can go to one of the pages above to see your posts, your friends and your friends posts. Have fun!</h2>
     </div>
     }
     </div>

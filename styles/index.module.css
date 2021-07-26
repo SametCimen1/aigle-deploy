@@ -114,6 +114,16 @@
         max-width: 400px;
     }
 }
+.welcome{
+    font-weight: 300;
+    text-align: center;
+    margin: 1rem 0;
+}
+.desc{
+    font-weight: 300;
+    text-align: center;
+    margin: 5rem 0;
+}
 @media screen and (min-width:1700px) {
     .login{
         font-size:1.5rem;

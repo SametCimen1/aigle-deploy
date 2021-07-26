@@ -22,25 +22,14 @@ export default async function handler(req,res){
   if(user.length === 1){
 
    const oldFriends = user[0].friends;
-   console.log(oldFriends)
+   const newFriends = oldFriends.filter(name => name !== friendName);
+  
 
-   let isFriend = false;
-   user[0].friends.forEach(friend => {
-      if(friend === friendName){
-         isFriend = true;
-      }
-   })
-
-   if(!isFriend){
          await db.collection("users").findOneAndUpdate(
             { "displayName" : req.query.userName},
-            { $set: { friends : [...oldFriends, friendName ] } }
+            { $set: { friends : newFriends } }
          )
             res.send("updated")  
-    }
-    else{
-       res.send("already friend")
-    }
   }
   else{
      res.send("error")

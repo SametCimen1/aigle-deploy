@@ -95,9 +95,9 @@ export default function Posts({comingFrom}){
               getFriendPosts(friendName)
          })
     }
-    useEffect(()=>{
-       posts.sort((firstItem, secondItem) => firstItem.date - secondItem.date);
-    },[posts])
+    // useEffect(()=>{
+    //    setPosts(posts.sort((firstItem, secondItem) => firstItem.date - secondItem.date));
+    // },[posts])
     return(
         <div>
         <h2>Post something!</h2>
@@ -113,12 +113,12 @@ export default function Posts({comingFrom}){
         <button className = {style.refresh} onClick = {fetchAgain}>
             Refresh
         </button>
-        {posts.length > 0 ?  posts.map(post =>
+        {posts.length > 0 ? 
+        posts.sort((firstItem, secondItem) => firstItem.date - secondItem.date).map(post =>
+
         {   
-            console.log("IN RENDER")
-            console.log(post)
             return (
-            <div className = {style.postContainer}>
+            <div className = {style.postContainer} key = {post.text}>
                {post.pp === '' || typeof post.pp ==='undefined' ? <img className = {style.profilPic} src = "https://www.pngarea.com/pngm/90/6980003_profile-icon-png-facebook-default-profile-picture-girl.png" /> : <img className = {style.profilPic} src = {post.pp} />}
                 <div className = {style.post}>
                    <h2 key = {post.text}>{post.text}</h2>
@@ -127,7 +127,7 @@ export default function Posts({comingFrom}){
             </div>
             )         
         
-        }) : <h1>Loading</h1>}
+        }) : <h2 className = {style.noFriend}>You dont have any friend, you can add friend by going to friends page</h2>}
    
        </div>
     )   
